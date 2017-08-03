@@ -101,9 +101,14 @@ L.append("72107838435069186155435662884062257473692284509516")
 L.append("20849603980134001723930671666823555245252804609722")
 L.append("53503534226472524250874054075591789781264330331690")
 
-m =0
+M = [i.split() for i in L]
+M = [[int(j) for j in i] for i in M]
+
+print len(L)
+m = 0
+
 for j in range (len(L)):
-    for i in range(len(L[j])):
-        m += int(L[j][i:i+1])
+   m += M[j][0]
         
-print m[:10]
+print str(m)[:10]
+
