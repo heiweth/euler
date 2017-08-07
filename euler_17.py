@@ -17,3 +17,4 @@ for i in range (1,1001):
         a = dict[i // 100] + dict[100] + 3
         b = (i - i//100*100 )
         s += a + less_than(b)
+print s
