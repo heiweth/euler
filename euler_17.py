@@ -2,10 +2,10 @@ dict = {0: 0, 1: 3, 2: 3, 3: 5, 4: 4, 5: 4, 6: 3, 7: 5, 8: 5, 9: 4, 10: 3, 11: 6
 
 def less_than(n):
     sum = 0
-    if i in dict: 
-        sum += dict[i] 
+    if n in dict: 
+        sum += dict[n] 
     else:
-        sum = dict[int(str(i)[1:2])] + dict[i // 10 * 10]
+        sum = dict[int(str(n)[1:2])] + dict[n // 10 * 10]
     return sum
 
 s = 0
