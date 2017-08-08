@@ -18,29 +18,8 @@ a.append("04 62 98 27 23 09 70 98 73 93 38 53 60 04 23")
 M = [i.split() for i in a]
 M = [[int(j) for j in i] for i in M]
 
-
-sum = 0
-maximum = 0
-p = 15
-m = 14
-
-def max(a,b):
-    if a >= b: return a
-    else: return b
-
-for m in range(14,-1,-1):
-    C=[0]*len(M[m-1])
-    for n in range(1,len(M[m])):
-        if M[m][n] > M[m][n-1]:
-            if n > len(M[m-1])-1: 
-                C[n-1] = M[m][n] + M[m-1][n-1]
-            else: 
-                C[n-1] = M[m][n] + max(M[m-1][n],M[m-1][n-1])
-        else: 
-            if n > len(M[m-1])-1: C[n-1] = M[m][n-1] + M[m-1][n-1]
-            else: C[n-1] = M[m][n-1] + max(M[m-1][n-1],M[m-1][n-2])
-    M[m-1] = C
-    sum = M[m-1][0]
-    del M[m]        
-
+for m in range(len(M)-2,-1,-1):
+    for n in range(len(M[m])):
+        M[m][n] = max(M[m+1][n],M[m+1][n+1]) + M[m][n]
+print M[0][0]
         
